@@ -1,11 +1,13 @@
 {
-  "name": "ex04",
+  "name": "ex06",
   "version": "1.0.0",
-  "description": "2. Babel CLI\r 1) 설치\r     $ npm i -D @babel/core @babel/CLI\r 2) $ npx babel src -d dist",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx webpack serve --progress",
+    "build": "npx webpack"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -20,6 +22,11 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cil": "^0.0.1-security",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
