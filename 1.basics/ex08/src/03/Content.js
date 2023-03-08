@@ -2,7 +2,7 @@ import React from 'react';
 
 function Content() {
     return (
-        <p>JSX Tutorial - HTML과 차이점</p>
+        <p>함수 컴포넌트 만들기</p>
     )
 }
 
