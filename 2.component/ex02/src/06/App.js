@@ -27,7 +27,7 @@ function App(props) {
   return (
     <StyledDiv id="App">
         <StyledH1>CSS in JS</StyledH1>
-        <Content color={'red'} fontSize={'32px'}>
+        <Content color={'#f00'}>
           Styled Components 연습
         </Content>
     </StyledDiv>

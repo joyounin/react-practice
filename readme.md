@@ -11,5 +11,14 @@ React Practice
 9. [참고2] babel-practice **
 
 kanbanboard
+    |-- backend
+    |-- frontend
+
 emaillist
+    |-- backend
+    |-- frontend
+    
 mysite07 (guestbook, gallery)
+    |-- backend
+    |-- frontend
+    
