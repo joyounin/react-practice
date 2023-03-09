@@ -1,29 +1,20 @@
 import React from 'react';
 import styles from './assets/css/Emaillist.css';
+import emails from './assets/json/data.json';
 
 const Emaillist = () => {
     return (
         <ul className={styles.Emaillist}>
              <li>
-                    둘리
+            {
+                emails.map(email => <li>
+
+                    {email.firstName + email.lastName}
                     <br/>
-                    dooly@gmail.com
-                </li>
-                <li>
-                    마이콜
-                    <br/>
-                    michol@gmail.com
-                </li>
-                <li>
-                    도우너
-                    <br/>
-                    douner@gmail.com
-                </li>
-                <li>
-                    또치
-                    <br/>
-                    ddochi@gmail.com
-                </li>
+                    {email.email}
+                </li>)
+                }
+            </li>
         </ul>
     );
 };
