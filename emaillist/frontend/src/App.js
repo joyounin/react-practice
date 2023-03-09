@@ -3,6 +3,7 @@ import './assets/css/App.css';
 import Searchbar from './Searchbar';
 import RegisterForm from './RegisterForm';
 import Emaillist from './Emaillist';
+import emails from './assets/json/data.json';
 
 
 function App(props) {
@@ -10,7 +11,7 @@ function App(props) {
         <div id='App' className={'App'}>
            <RegisterForm />          
            <Searchbar />
-           <Emaillist />
+           <Emaillist emails={emails}/>
         </div>
     );
 }
