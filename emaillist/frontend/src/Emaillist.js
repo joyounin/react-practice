@@ -7,8 +7,9 @@ const Emaillist = () => {
         <ul className={styles.Emaillist}>
              <li>
             {
-                emails.map(email => <li>
-
+                emails.map(email => <li
+                        key={email.no}
+                        no={email.no}>
                     {email.firstName + email.lastName}
                     <br/>
                     {email.email}
