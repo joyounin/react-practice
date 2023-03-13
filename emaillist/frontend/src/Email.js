@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-const Email = ({no, name, email}) => {
+const Email = ({no, firstName, lastName, email}) => {
     return (
         <li>
-            {name}
+            {firstName}{lastName}
             <br/>
             {email}
+            <a href=''></a>
         </li>
     );
 };

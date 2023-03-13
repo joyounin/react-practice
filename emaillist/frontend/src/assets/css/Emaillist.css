@@ -44,6 +44,6 @@
 }
 .Emaillist li a:hover, a:visited, a:active {
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 
