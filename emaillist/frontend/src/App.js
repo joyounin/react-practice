@@ -8,15 +8,16 @@ import data from './assets/json/data.json';
 
 function App(props) {
     const [emails, setEmails] = useState(data);
-    const notifyKeyWordChanged = function(){
+    const notifyKeyWordChanged = function(keyword){
         // keyword가 firstName or lastName or email
-        const newEmails = emails.filter(function(e) {return true})
+        const newEmails = data.filter(e => e.firstName.includes(keyword) || e.lastName.includes(keyword) || e.email.includes(keyword));
+        setEmails(newEmails);
     }
 
     return (
         <div id='App' className={'App'}>
            <RegisterForm />          
-           <Searchbar />
+           <Searchbar callback={notifyKeyWordChanged}/>
            <Emaillist emails={emails}/>
         </div>
     );
