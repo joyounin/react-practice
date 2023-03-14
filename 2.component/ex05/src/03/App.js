@@ -3,7 +3,12 @@ import './assets/scss/App.scss'
 import Clock from './Clock';
 
 export default class App extends Component {
-  
+    constructor(props) {
+        super(props);
+        setInterval(function(){
+            this.props.seconds + 1;
+        }, 1000);
+    }
 
     render() {
         return (
