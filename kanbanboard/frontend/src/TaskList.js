@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import Task from './Task';
 
 const TaskList = ({cardNo, tasks, callback}) => {
@@ -6,10 +6,10 @@ const TaskList = ({cardNo, tasks, callback}) => {
         <div>
             <ul>
                 {
-                    tasks.map(task => <Task 
+                    tasks.map(task => <Task
                                         key={task.no}
                                         no={task.no}
-                                        cardNo={cardNo}
+                                        cardNo={cardNo}                                        
                                         name={task.name}
                                         done={task.done}
                                         callback={callback}/>)
