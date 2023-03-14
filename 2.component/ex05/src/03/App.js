@@ -10,7 +10,7 @@ export default class App extends Component {
         }
     }
 
-    // 컴포넌트 DOM에서
+    // 컴포넌트 생성을 마치고 첫 렌더링 작업이 끝난 후
     componentDidMount() {
         this.time = setInterval(() => this.timeChange(),1000)
     }
