@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import './assets/scss/Clock.scss';
 
 export default class Clock extends Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         return (
             <div className="clock-field">
@@ -35,6 +39,7 @@ export default class Clock extends Component {
         );
     }
 
+    // 컴포넌트 DOM에서 제거 할때
     componentWillUnmount() {
         console.log('Clock', 'componentWillUnmount');
     }

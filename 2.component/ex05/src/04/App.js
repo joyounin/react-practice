@@ -10,13 +10,13 @@ export default function App() {
         <div>
             <span>{ticks}</span>
             {
-                ticks % 10 === 0?
+                ticks % 10 === 0 ?
                 null :
                 <Clock
-                message={'ex05: useEffect Hook example'}
-                hours={'18'}
-                minutes={'20'}
-                seconds={'30'}/>
+                    message={'ex05: useEffect Hook example'}
+                    hours={'10'}
+                    minutes={'20'}
+                    seconds={'03'}/>
             }
         </div>
     );

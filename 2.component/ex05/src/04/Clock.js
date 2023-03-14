@@ -6,7 +6,9 @@ import './assets/scss/Clock.scss';
 export default function Clock({message, hours, minutes, seconds}) {
     useEffect(() =>{
         setInterval(function(){
-            
+            hours++;
+            minutes++;
+            seconds++;
         }, 1000);
     }, []);
 
