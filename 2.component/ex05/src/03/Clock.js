@@ -6,21 +6,23 @@ export default class Clock extends Component {
         return (
             <div className="clock-field">
                 <div>
-                    <p className="hours">{this.props.hours}</p>
+                    <p className="hours">
+                        {('0' + (this.props.hours > 12 ? this.props.hours - 12 : this.props.hours)).slice(-2)}
+                    </p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="colon">
                     <p>:</p>
                 </div>
                 <div className="numbers">
-                    <p>{this.props.minutes}</p>
+                    <p>{('0' + this.props.minutes).slice(-2)}</p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="colon">
                     <p>:</p>
                 </div>
                 <div className="numbers">
-                    <p>{this.props.seconds}</p>
+                    <p>{('0' + this.props.seconds).slice(-2)}</p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="AmPm">
@@ -33,10 +35,5 @@ export default class Clock extends Component {
                 </div>
             </div>
         );
-    }
-
-    // 컴포넌트 DOM에서 제거 할때
-    componentWillUnmount() {
-        console.log('Clock', 'componentWillUnmount');
     }
 }
