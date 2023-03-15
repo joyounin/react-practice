@@ -8,7 +8,7 @@ export default function App() {
 
     useEffect(() =>{
         const times = setInterval(() => {
-            setTick(tick => tick+1)
+            setTick(t => t + 1)
             setTime(new Date())
          }, 1000);
          return (() => clearInterval(times))

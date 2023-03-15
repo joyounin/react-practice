@@ -4,12 +4,6 @@ import SessionAmPm from "./SessionAmPm";
 import './assets/scss/Clock.scss';
 
 export default function Clock({message, hours, minutes, seconds}) {
-    useEffect(() =>{
-        setInterval(() =>{
-            
-        }, 1000);
-    }, []);
-
     return (
         <div className={'clock-display'}>
             <h2>{message}</h2>
