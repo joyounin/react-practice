@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Task from './Task';
 import styles from './assets/css/TaskList.css';
 
-const TaskList = ({cardNo, tasks, callbackAddTask}) => {
+const TaskList = ({tasks, callbackAddTask, callbackChangeTaskDone}) => {
 
     return (
         <div>
@@ -10,10 +10,10 @@ const TaskList = ({cardNo, tasks, callbackAddTask}) => {
                 {
                     tasks.map(task => <Task
                                         key={task.no}
-                                        no={task.no}
-                                        cardNo={cardNo}                                        
+                                        no={task.no}                                        
                                         name={task.name}
-                                        done={task.done}/>)
+                                        done={task.done}
+                                        callbackChangeTaskDone={callbackChangeTaskDone}/>)
                 }
             </ul>
             <input
