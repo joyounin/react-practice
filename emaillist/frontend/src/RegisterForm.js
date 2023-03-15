@@ -10,7 +10,8 @@ const RegisterForm = ({ callbackAddEmail }) => {
         callbackAddEmail(
           e.target.firstName.value,
           e.target.lastName.value,
-          e.target.email.value
+          e.target.email.value,
+          e.target.reset()
         );
       }}
     >
