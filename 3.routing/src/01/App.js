@@ -4,7 +4,7 @@ import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
 export default function App() {
-  const [route, setRoute] = useState("/");
+  const [route, setRoute] = useState('/');
 
   useEffect(() => {
     window.addEventListener("hashchange", handlerHashChange);
@@ -20,11 +20,11 @@ export default function App() {
 
   return (() => {
     switch (route) {
-      case "/":
+      case '/':
         return <Main />;
-      case "/guestbook":
+      case '/guestbook':
         return <Guestbook />;
-      case "/gallery":
+      case '/gallery':
         return <Gallery />;
       default:
         return null;
