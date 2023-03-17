@@ -97,7 +97,7 @@
 						<argument>run</argument>
 						<argument>build</argument>
 					</arguments>
-					<environmentScript></environmentScript>
+					<environmentVariables></environmentVariables>
 				</configuration>
 			</plugin>
 		</plugins>
