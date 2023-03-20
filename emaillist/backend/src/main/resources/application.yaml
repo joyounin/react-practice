@@ -1,9 +1,3 @@
-# active spring boot profile
-spring:
-   profiles:
-      active: development
-
----
 # common spring boot configuration
 spring:
    mvc:
@@ -15,7 +9,7 @@ spring:
    web:
       resources:
          # Locations of static resources
-         static-locations: classpath:/static/
+         static-locations: classpath:/assets/
 
    thymeleaf:
       prefix : classpath:templates/
@@ -24,16 +18,25 @@ spring:
       suffix : .html
       cache : false
 
-   # datasource
+   #datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.10.107:3307/webdb?charset=utf8
+      url: jdbc:mariadb://192.168.10.108:3307/webdb?charset=utf8
       username: webdb
       password: webdb
-      hkari:
+      hikari:
          minimum-idle: 10
          maximum-pool-size: 20
 
+# mybatis
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+
+# logging
+logging:
+   level:
+      root: INFO 
+         
 
 ---
 # development profile: spring boot configuration
@@ -47,14 +50,6 @@ spring:
       livereload:
          enabled: true
 
-
----
-# mybatis
-mybatis:
-   config-location: classpath:mybatis/configuration.xml
-
-   
----
 # server
 server:
    port: 8080
@@ -65,23 +60,14 @@ server:
          enabled: true
          
 ---
-# logging
-logging:
-   level:
-      root: INFO           
 
-#
-# production configuration
-#
+# production profile: spring boot configuration
 spring:
    config:
       activate:
          on-profile: production
-   datasource:
-      driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.10.107:3307/webdb?charset=utf8
-      username: webdb
-      password: webdb         
+
+# server
 server:
    port: 8088
    servlet:
