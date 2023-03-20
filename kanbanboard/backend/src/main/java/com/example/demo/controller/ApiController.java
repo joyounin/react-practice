@@ -29,10 +29,10 @@ public class ApiController {
 	private TaskRepository taskRepository;
 	
 	@GetMapping("/hello")
-	public ResponseEntity<JsonResult> hello(){
+	public ResponseEntity<JsonResult> hello() {
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success("hello~~~"));
+				.body(JsonResult.success("hello~~~~"));
 	}
 
 	@GetMapping("/card")
