@@ -21,54 +21,54 @@ import com.example.demo.vo.TaskVo;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
-	
-	@Autowired
-	private CardRepository cardRepository;
+   
+   @Autowired
+   private CardRepository cardRepository;
 
-	@Autowired
-	private TaskRepository taskRepository;
-	
-	@GetMapping("/hello")
-	public ResponseEntity<JsonResult> hello() {
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success("hello~~~~"));
-	}
+   @Autowired
+   private TaskRepository taskRepository;
 
-	@GetMapping("/card")
-	public ResponseEntity<JsonResult> readCard() {
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(cardRepository.findAll()));
-	}
-	
-	@GetMapping("/task")
-	public ResponseEntity<JsonResult> readTask(Long cardNo) {
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(taskRepository.findAllByCardNo(cardNo)));
-	}
+   @GetMapping("/card")
+   public ResponseEntity<JsonResult> readCard() {
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success(cardRepository.findAll()));
+   }
+   
+   @GetMapping("/hello")
+   public ResponseEntity<JsonResult> hello() {
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success("hello~~~~"));
+   }
+   
+   @GetMapping("/task")
+   public ResponseEntity<JsonResult> readTask(Long cardNo) {
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success(taskRepository.findAllByCardNo(cardNo)));
+   }
 
-	@PostMapping("/task")
-	public ResponseEntity<JsonResult> createTask(@RequestBody TaskVo taskVo) {
-		taskRepository.insert(taskVo);
-		
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(taskVo));
-	}
+   @PostMapping("/task")
+   public ResponseEntity<JsonResult> createTask(@RequestBody TaskVo taskVo) {
+      taskRepository.insert(taskVo);
+      
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success(taskVo));
+   }
 
-	@SuppressWarnings("serial")
-	@PutMapping("/task/{no}")
-	public ResponseEntity<JsonResult> updateTask(@PathVariable("no") Long no, String done) {
-		taskRepository.updateDone(no, done);
-		
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(new HashMap<String, Object>() {{
-				    put("no", no);
-				    put("done", done);
-				}}));
-	}
+   @SuppressWarnings("serial")
+   @PutMapping("/task/{no}")
+   public ResponseEntity<JsonResult> updateTask(@PathVariable("no") Long no, String done) {
+      taskRepository.updateDone(no, done);
+      
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success(new HashMap<String, Object>() {{
+                put("no", no);
+                put("done", done);
+            }}));
+   }
 
 }
