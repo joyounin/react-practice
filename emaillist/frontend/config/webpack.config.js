@@ -1,4 +1,5 @@
 const path = require("path");
+
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 
 module.exports = function (env) {
@@ -17,23 +18,27 @@ module.exports = function (env) {
           exclude: /node_modules/,
           loader: "babel-loader",
           options: {
-            configFile: path.resolve('config/babel.config.json')
-          } 
-        }, {
+            configFile: path.resolve("config/babel.config.json"),
+          },
+        },
+        {
           test: /\.(c|sa|sc)ss$/i,
           use: [
             "style-loader",
             {
               loader: "css-loader",
               options: {
-                modules: true
-              }
+                modules: true,
+              },
             },
-            "sass-loader"]
-        }, {
+            "sass-loader",
+          ],
+        },
+        {
           test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
           type: "asset/resource",
-        }]
+        },
+      ],
     },
     plugins: [new CaseSensitivePathsPlugin()],
     devtool: "eval-source-map",
@@ -41,7 +46,7 @@ module.exports = function (env) {
       host: "0.0.0.0",
       port: 9090,
       proxy: {
-        '/api': 'http://localhost:8080'
+        "/api": "http://localhost:8080",
       },
       liveReload: true,
       compress: true,
