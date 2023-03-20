@@ -8,7 +8,24 @@
 		테스트
 		# java -Dspring.profiles.active=production -jar kanbanboard/backend/target/kanbanboard.jar
 
-
+2. ssh 연결(ssh key 인증)
+	1) key 생성하기
+		$ ssh-keygen -t rsa -b 2048 -m PEM -C "3723519@naver.com" 
+	2) key 생성확인
+		- ~/.ssh/id_rsa 	: private key
+		- ~/.ssh/id_rsa.pub : public key
+	3) 공개키를 서버에 설치하기
+		# mv ~/.ssh/id_rsa.pub ~/.ssh/autorized_keys
+	
+	4) 연결 테스트
+		# ssh -i mykey.pem root@192.168.10.107
+	
+	5) jenkins
+		- Publish over SSH 플러그인 설치
+		- Publish over SSH 플러그인 ssh server 등록(springboot-publish-server)
+		- 프로젝트의 빌드 후 조치(post-build action)의  설정
+		  kanbanboard.jar : transfer
+		  launch.sh : transfer + execution
 ====================================================================
 
 
