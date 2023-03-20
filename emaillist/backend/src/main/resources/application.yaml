@@ -70,22 +70,18 @@ logging:
    level:
       root: INFO           
 
-# production profile: spring boot configuration
+#
+# production configuration
+#
 spring:
    config:
-   # datasource
       activate:
          on-profile: production
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mariadb://192.168.10.107:3307/webdb?charset=utf8
       username: webdb
-      password: webdb
-      hkari:
-         minimum-idle: 10
-         maximum-pool-size: 20
-
-# server
+      password: webdb         
 server:
    port: 8088
    servlet:
@@ -93,4 +89,3 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-   
