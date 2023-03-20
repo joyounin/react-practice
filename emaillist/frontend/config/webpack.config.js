@@ -6,7 +6,7 @@ module.exports = function (env) {
     mode: "none",
     entry: path.resolve(`src/index.js`),
     output: {
-      path: path.resolve("public"),
+      path: path.resolve("../backend/src/main/resources"),
       filename: "assets/js/main.js",
       assetModuleFilename: "assets/images/[hash][ext]",
     },
@@ -35,6 +35,7 @@ module.exports = function (env) {
           type: "asset/resource",
         }]
     },
+    plugins: [new CaseSensitivePathsPlugin()],
     devtool: "eval-source-map",
     devServer: {
       host: "0.0.0.0",
